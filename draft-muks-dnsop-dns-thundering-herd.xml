@@ -60,9 +60,9 @@
     <!-- <keyword>dns</keyword> -->
 
     <abstract>
-      <t>This document describes the DNS thundering herd problem that
-      affects caching resolvers and recommends software mitigations for
-      it.</t>
+      <t>This document describes an observed regular pattern of spikes
+      in queries that affects caching resolvers and recommends software
+      mitigations for it.</t>
     </abstract>
 
   </front>
