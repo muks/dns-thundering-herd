@@ -162,7 +162,8 @@
         asking the same question and there is no existing unexpired
         cached answer, DNS resolutions have to be performed to answer
         these queries. De-duplication of these multiple resolutions into
-        a single DNS resolution by the resolver is RECOMMENDED.</t>
+        a single DNS resolution by the resolver is RECOMMENDED where
+        possible.</t>
 
         <t>If such de-duplication is not performed, the client queries
         will effectively be forwarded 1:1 by the resolver to upstream
