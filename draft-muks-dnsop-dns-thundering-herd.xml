@@ -193,8 +193,8 @@
       <t>This document was prepared from thundering herd client query
       patterns noticed at resolvers of ISPs and large institutions,
       which resulted in traffic spikes that caused performance issues
-      and lookup failures. The authors acknowledge Ramesh Damodaran who
-      helped with analysis of these patterns.</t>
+      and lookup failures. The authors acknowledge the contribution of
+      Ramesh Damodaran who helped with analysis of these patterns.</t>
     </section>
 
   </middle>
