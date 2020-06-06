@@ -157,7 +157,7 @@
 
     <section title="Mitigations">
 
-      <section title="Combine common queries to upstream nameservers">
+      <section title="Combine identical queries to upstream nameservers">
         <t>At a resolver, when multiple queries have arrived together
         asking the same question and there is no existing unexpired
         cached answer, DNS resolutions have to be performed to answer
