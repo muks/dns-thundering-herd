@@ -155,6 +155,32 @@
       here.</t>
     </section>
 
+    <section title="Mitigations">
+
+      <section title="Combine common queries to upstream nameservers">
+        <t>At a resolver, when multiple queries have arrived together
+        asking the same question and there is no existing unexpired
+        cached answer, DNS resolutions have to be performed to answer
+        these queries. De-duplication of these multiple resolutions into
+        a single DNS resolution by the resolver is RECOMMENDED.</t>
+
+        <t>If such de-duplication is not performed, the client queries
+        will effectively be forwarded 1:1 by the resolver to upstream
+        nameservers, and they will significantly increase the upstream
+        nameservers' query rate in spikes. Some nameserver operators may
+        have deployed measures such as response rate-limiting (RRL) and
+        other IP-based rate-limiting which may cause them to deny
+        service to the resolver due to the query spikes of identical
+        queries.</t>
+
+      </section>
+
+      <section title="Include noise in response TTLs from caching resolvers">
+        <t>TBD.</t>
+      </section>
+
+    </section>
+
     <section title="Security Considerations">
       <t>There are no security considerations</t>
     </section>
