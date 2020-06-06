@@ -79,8 +79,71 @@
       that the resolver replied with expires.</t>
 
       <t>As an example, consider the following query sequence received
-      by a resolver from clients C1, C2, C3, C4, all querying for the
+      by a resolver from 10 clients all querying for the
       www.example.org./A RRset.</t>
+
+      <texttable>
+
+        <ttcol>Client</ttcol>
+        <ttcol>Query time (seconds since epoch)</ttcol>
+        <ttcol>Answer RRset TTL</ttcol>
+        <ttcol>Details</ttcol>
+
+        <c>C1</c>
+        <c>1591441620</c>
+        <c>600</c>
+        <c>Answer was not found in cache. Resolver performs a resolution
+        and caches authoritative answer with TTL=600.</c>
+
+        <c>C2</c>
+        <c>1591441626</c>
+        <c>594</c>
+        <c></c>
+
+        <c>C3</c>
+        <c>1591441713</c>
+        <c>507</c>
+        <c></c>
+
+        <c>C4</c>
+        <c>1591441780</c>
+        <c>440</c>
+        <c></c>
+
+        <c>C5</c>
+        <c>1591441866</c>
+        <c>354</c>
+        <c></c>
+
+        <c>C6</c>
+        <c>1591442006</c>
+        <c>214</c>
+        <c></c>
+
+        <c>C7</c>
+        <c>1591442070</c>
+        <c>150</c>
+        <c></c>
+
+        <c>C8</c>
+        <c>1591442070</c>
+        <c>150</c>
+        <c></c>
+
+        <c>C9</c>
+        <c>1591442213</c>
+        <c>7</c>
+        <c></c>
+
+        <c>C10</c>
+        <c>1591442227</c>
+        <c>600</c>
+        <c>Previously cached answer had expired in the resolver's
+        cache. So the resolver performs a fresh resolution and caches
+        authoritative answer with TTL=600.</c>
+
+      </texttable>
+
     </section>
 
     <section title="Requirements Notation">
