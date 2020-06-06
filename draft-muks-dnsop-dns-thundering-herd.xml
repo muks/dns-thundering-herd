@@ -69,7 +69,7 @@
 
   <middle>
 
-    <section title="Introduction">
+    <section title="Problem Description">
       <t>Typically, DNS caching resolvers prepare answers for multiple
       clients from a single cached RRset <xref target="RFC1034"
       />. Depending on when in time the clients make their queries,
