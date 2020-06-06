@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<!-- This template is for creating an Internet Draft using xml2rfc,
+     which is available here: http://xml.resource.org. -->
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd">
+<?xml-stylesheet type='text/xsl' href='rfc2629.xslt' ?>
+<!-- used by XSLT processors -->
+<!-- For a complete list and description of processing instructions (PIs),
+     please see http://xml.resource.org/authoring/README.html. -->
+<!-- Below are generally applicable Processing Instructions (PIs) that most I-Ds might want to use.
+     (Here they are set differently than their defaults in xml2rfc v1.32) -->
+<?rfc strict="yes" ?>
+<!-- give errors regarding ID-nits and DTD validation -->
+<!-- control the table of contents (ToC) -->
+<?rfc toc="yes"?>
+<?rfc tocappendix="yes"?>
+<!-- generate a ToC -->
+<?rfc tocdepth="3"?>
+<!-- the number of levels of subsections in ToC. default: 3 -->
+<!-- control references -->
+<?rfc symrefs="yes"?>
+<!-- use symbolic references tags, i.e, [RFC2119] instead of [1] -->
+<?rfc sortrefs="yes" ?>
+<!-- sort the reference entries alphabetically -->
+<!-- control vertical white space
+     (using these PIs as follows is recommended by the RFC Editor) -->
+<?rfc compact="yes" ?>
+<!-- do not start each main section on a new page -->
+<?rfc subcompact="no" ?>
+<!-- keep one blank line between list items -->
+<!-- end of list of popular I-D processing instructions -->
+<?rfc comments="no" ?>
+<?rfc inline="yes" ?>
+<rfc category="exp" docName="draft-muks-dnsop-dns-thundering-herd-00" ipr="trust200902">
+
+  <front>
+
+    <title>The DNS thundering herd problem</title>
+
+    <author fullname="Mukund Sivaraman" initials="M." surname="Sivaraman">
+      <organization>Akira Systems Private Limited</organization>
+      <address>
+        <postal>
+          <street>1 Coleman Street, #05-05 The Adelphi</street>
+          <city>Singapore</city>
+          <code>179803</code>
+          <country>SG</country>
+        </postal>
+        <email>muks@akira.org</email>
+        <uri>https://akira.org/</uri>
+      </address>
+    </author>
+
+    <date/>
+
+    <!-- Meta-data Declarations -->
+
+    <area>Operations and Management Area</area>
+    <workgroup>Internet Engineering Task Force</workgroup>
+
+    <!-- <keyword>dns</keyword> -->
+
+    <abstract>
+      <t>This document describes the DNS thundering herd problem that
+      affects caching resolvers and recommends software mitigations for
+      it.</t>
+    </abstract>
+
+  </front>
+
+  <middle>
+
+    <section title="Introduction">
+      <t>Typically, DNS caching resolvers prepare answers for multiple
+      clients from a single cached RRset <xref target="RFC1034"
+      />. Depending on when in time the clients make their queries,
+      caching resolvers reply with lower and lower valued TTLs, before
+      the cached RRset from which answers are prepared expires. Clients
+      themselves may cache and use their copy of RRsets until the TTL
+      that the resolver replied with expires.</t>
+
+      <t>As an example, consider the following query sequence received
+      by a resolver from clients C1, C2, C3, C4, all querying for the
+      www.example.org./A RRset.</t>
+    </section>
+
+    <section title="Requirements Notation">
+      <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
+      NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED",
+      "MAY", and "OPTIONAL" in this document are to be interpreted as
+      described in <xref target="RFC2119"/> <xref target="RFC8174"/>
+      when, and only when, they appear in all capitals, as shown
+      here.</t>
+    </section>
+
+    <section title="Security Considerations">
+      <t>There are no security considerations</t>
+    </section>
+
+    <section title="IANA considerations">
+      <t>There are no IANA considerations.</t>
+    </section>
+
+    <section title="Acknowledgements">
+      <t>This document was prepared from thundering herd client query
+      patterns noticed at resolvers of ISPs and large institutions,
+      which resulted in traffic spikes that caused performance
+      issues. The authors acknowledge Ramesh Damodaran who helped with
+      analysis of these patterns.</t>
+    </section>
+
+  </middle>
+
+  <back>
+
+    <references title="Normative references">
+      <?rfc include="reference.RFC.1034.xml"?>
+      <?rfc include="reference.RFC.2119.xml"?>
+      <?rfc include="reference.RFC.8174.xml"?>
+    </references>
+
+    <section title="Change history (to be removed before publication)">
+      <t>
+        <list style="symbols">
+
+          <t>
+          draft-muks-dnsop-dns-thundering-herd-00
+          <vspace/>
+          * Initial draft.
+          </t>
+
+        </list>
+      </t>
+    </section>
+
+  </back>
+</rfc>
