@@ -61,8 +61,8 @@
 
     <abstract>
       <t>This document describes an observed regular pattern of spikes
-      in queries that affects caching resolvers and recommends software
-      mitigations for it.</t>
+      in queries, that affects caching resolvers, and recommends
+      software mitigations for it.</t>
     </abstract>
 
   </front>
