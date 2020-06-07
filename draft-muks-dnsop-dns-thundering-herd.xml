@@ -75,7 +75,7 @@
       />. Depending on when in time the clients make their queries,
       caching resolvers reply with lower and lower valued TTLs, before
       the cached RRset from which answers are prepared expires. Clients
-      themselves may cache and use their copy of RRsets until the TTL
+      themselves may cache and use their copies of RRsets until the TTL
       that the resolver replied with expires. A key property is that all
       these copies of answers expire at the same absolute time.</t>
 
