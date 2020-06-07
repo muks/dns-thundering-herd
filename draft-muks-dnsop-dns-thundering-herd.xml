@@ -76,18 +76,20 @@
       caching resolvers reply with lower and lower valued TTLs, before
       the cached RRset from which answers are prepared expires. Clients
       themselves may cache and use their copy of RRsets until the TTL
-      that the resolver replied with expires.</t>
+      that the resolver replied with expires. A key property is that all
+      these copies of answers expire at the same absolute time.</t>
 
       <t>As an example, consider the following query sequence received
-      by a resolver from 10 clients all querying for the
-      www.example.org./A RRset.</t>
+      by a resolver from 10 clients all querying for a popular
+      www.example.org./A RRset. We use this example to illustrate two
+      kinds of spikes in queries.</t>
 
       <texttable>
 
         <ttcol>Client</ttcol>
         <ttcol>Query time (seconds since epoch)</ttcol>
         <ttcol>Answer RRset TTL</ttcol>
-        <ttcol>Details</ttcol>
+        <ttcol>Notes</ttcol>
 
         <c>C1</c>
         <c>1591441620</c>
@@ -98,49 +100,89 @@
         <c>C2</c>
         <c>1591441626</c>
         <c>594</c>
-        <c></c>
+        <c>Answered from cache</c>
 
         <c>C3</c>
         <c>1591441713</c>
         <c>507</c>
-        <c></c>
+        <c>Answered from cache</c>
 
         <c>C4</c>
         <c>1591441780</c>
         <c>440</c>
-        <c></c>
+        <c>Answered from cache</c>
 
         <c>C5</c>
         <c>1591441866</c>
         <c>354</c>
-        <c></c>
+        <c>Answered from cache</c>
 
         <c>C6</c>
         <c>1591442006</c>
         <c>214</c>
-        <c></c>
+        <c>Answered from cache</c>
 
         <c>C7</c>
         <c>1591442070</c>
         <c>150</c>
-        <c></c>
+        <c>Answered from cache</c>
 
         <c>C8</c>
         <c>1591442070</c>
         <c>150</c>
-        <c></c>
+        <c>Answered from cache</c>
 
         <c>C9</c>
         <c>1591442213</c>
         <c>7</c>
-        <c></c>
+        <c>Answered from cache</c>
 
-        <c>C10</c>
-        <c>1591442227</c>
+        <c>C3</c>
+        <c>1591442220</c>
         <c>600</c>
         <c>Previously cached answer had expired in the resolver's
         cache. So the resolver performs a fresh resolution and caches
         authoritative answer with TTL=600.</c>
+
+        <c>C5</c>
+        <c>1591442220</c>
+        <c>600</c>
+        <c>Ditto, if not joined with previous</c>
+
+        <c>C2</c>
+        <c>1591442220</c>
+        <c>600</c>
+        <c>Ditto, if not joined with previous</c>
+
+        <c>C6</c>
+        <c>1591442220</c>
+        <c>600</c>
+        <c>Ditto, if not joined with previous</c>
+
+        <c>C1</c>
+        <c>1591442221</c>
+        <c>599</c>
+        <c>Answered from cache</c>
+
+        <c>C9</c>
+        <c>1591442221</c>
+        <c>599</c>
+        <c>Answered from cache</c>
+
+        <c>C4</c>
+        <c>1591442221</c>
+        <c>599</c>
+        <c>Answered from cache</c>
+
+        <c>C8</c>
+        <c>1591442221</c>
+        <c>599</c>
+        <c>Answered from cache</c>
+
+        <c>C10</c>
+        <c>1591442227</c>
+        <c>593</c>
+	<c>Answered from cache</c>
 
       </texttable>
 
