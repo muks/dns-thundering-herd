@@ -287,7 +287,10 @@
         in their answers as they please <xref target="RFC2181"/>. This
         can be used to distribute the time at which RRset copies
         received by clients expire from a single absolute time to a time
-        interval.</t>
+        interval. However this has to be done with some consideration
+        such that the thundering herd doesn't re-converge at the expiry
+        time of the cached RRset that is used to generate answers to the
+        clients.</t>
 
 	<t>TBD.</t>
       </section>
