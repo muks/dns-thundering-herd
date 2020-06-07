@@ -283,7 +283,10 @@
       </section>
 
       <section title="Include noise in response TTLs from caching resolvers">
-        <t>TBD.</t>
+        <t>Caching resolvers are permitted to lower the TTLs of RRsets
+        in their answers as they please <xref target="RFC2181"/>.</t>
+
+	<t>TBD.</t>
       </section>
 
       <section title="Other mitigations">
@@ -325,6 +328,7 @@
     <references title="Normative references">
       <?rfc include="reference.RFC.1034.xml"?>
       <?rfc include="reference.RFC.2119.xml"?>
+      <?rfc include="reference.RFC.2181.xml"?>
       <?rfc include="reference.RFC.8174.xml"?>
     </references>
 
