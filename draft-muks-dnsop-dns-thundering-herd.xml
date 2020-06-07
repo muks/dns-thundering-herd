@@ -284,7 +284,10 @@
 
       <section title="Include noise in response TTLs from caching resolvers">
         <t>Caching resolvers are permitted to lower the TTLs of RRsets
-        in their answers as they please <xref target="RFC2181"/>.</t>
+        in their answers as they please <xref target="RFC2181"/>. This
+        can be used to distribute the time at which TTLs of RRset copies
+        received by clients expire from a single absolute time to a time
+        interval.</t>
 
 	<t>TBD.</t>
       </section>
