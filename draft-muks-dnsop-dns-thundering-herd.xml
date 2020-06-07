@@ -286,6 +286,20 @@
         <t>TBD.</t>
       </section>
 
+      <section title="Other mitigations">
+        <t>With very low authoritative TTLs (such as under 60s) for
+        popular questions, the frequency of the thundering herd
+        increases and including noise in response TTLs is less effective
+        because the maximum TTL to work with is low. In other words,
+        there is a shorter interval over which the thundering herd can
+        be distributed by adding noise. Some implementations permit an
+        operator to set a minimum TTL value such that authoritative
+        RRset TTLs with lower values are raised and clamped to the
+        minimum TTL value. This breaks currently accepted DNS protocol,
+        and hence this draft does not make any recommendation about
+        it.</t>
+      </section>
+
     </section>
 
     <section title="Security Considerations">
