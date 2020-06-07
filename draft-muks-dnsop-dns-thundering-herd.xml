@@ -84,6 +84,13 @@
       www.example.org./A RRset. We use this example to illustrate two
       kinds of spikes in queries.</t>
 
+      <!-- TBD: -->
+      <!-- * There are many such thundering herds for many popular questions. -->
+      <!-- * Some client applications appear to perform DNS lookups very frequently using API, and the resolver is queried the moment the answer expires within the application process. -->
+      <!-- * This problem affects resolvers even at organizations, which are relatively private-access. -->
+      <!-- * Low TTL RRsets increase the frequency of the problem, and make mitigation difficult. -->
+      <!-- * Some implementations allow increasing TTL above very low authoritative answer TTLs, but this is controversial. -->
+
       <texttable>
 
         <ttcol>Client</ttcol>
