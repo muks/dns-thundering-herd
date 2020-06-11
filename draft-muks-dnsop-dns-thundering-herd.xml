@@ -277,9 +277,9 @@
         nameservers, and they will significantly increase the upstream
         nameservers' query rate in spikes. Some nameserver operators may
         have deployed measures such as response rate-limiting <xref
-        target="RRL" /> and other IP-based rate-limiting which may cause
-        them to deny service to the resolver due to the query spikes of
-        identical queries.</t>
+        target="RRL" /> and other IP-address based rate-limiting which
+        may cause them to deny service to the resolver due to the query
+        spikes of identical queries.</t>
 
       </section>
 
