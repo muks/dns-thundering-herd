@@ -304,7 +304,7 @@
         there is a shorter interval over which the thundering herd can
         be distributed by adding noise. Some implementations permit an
         operator to set a minimum TTL value such that authoritative
-        RRset TTLs with lower values are raised and clamped to the
+        RRset TTLs with lower values are increased and clamped to the
         minimum TTL value. This breaks currently accepted DNS protocol,
         and hence this draft does not make any recommendation about
         it.</t>
