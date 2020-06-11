@@ -306,7 +306,7 @@
         operator to set a minimum TTL value such that authoritative
         RRset TTLs with lower values are increased and clamped to the
         minimum TTL value. This breaks currently accepted DNS protocol,
-        and hence this draft does not make any recommendation about
+        and hence this document does not make any recommendation about
         it.</t>
       </section>
 
