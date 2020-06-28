@@ -322,6 +322,20 @@
         minimum TTL value. This breaks currently accepted DNS protocol,
         and hence this document does not make any recommendation about
         it.</t>
+
+	<t>Prefetching <xref target="I-D.wkumari-dnsop-hammer" />
+	features in many DNS resolver implementations today. This
+	feature was not observed to help mitigate the thundering herd
+	problem. This is because the set of clients interested in an
+	answer is mostly static relative to the answer RRset's TTL. In
+	other words, clients rarely join and leave the set during the
+	TTL interval. The clients group themselves into herds aligned to
+	the expiry time of the answer, and they arrive together as a
+	nearly instantaneous spike after the TTL expiry. The frequency
+	of these spikes was observed to be equal to the TTL of the
+	answer RRset. Prefetching does not usually happen as there's
+	often no lone client that queries a few seconds before the
+	answer expires.</t>
       </section>
 
     </section>
@@ -340,8 +354,8 @@
       which resulted in traffic spikes that caused performance issues
       and lookup failures. The authors acknowledge the contribution of
       Ramesh Damodaran who participated in analysis of these
-      patterns. The authors also thank Robert Edmonds for his review of
-      the draft.</t>
+      patterns. The authors also thank Robert Edmonds, Paul Wouters, and
+      Paul Vixie for their reviews of the draft.</t>
     </section>
 
   </middle>
@@ -365,6 +379,7 @@
 	  <date year="2012" />
 	</front>
       </reference>
+      <?rfc include="reference.I-D.wkumari-dnsop-hammer.xml"?>
     </references>
 
     <section title="Change history (to be removed before publication)">
@@ -372,9 +387,16 @@
         <list style="symbols">
 
           <t>
+          draft-muks-dnsop-dns-thundering-herd-01
+          <vspace/>
+          Per review comments, add notes about prefetching, and a
+          reference to RFC 5452.
+          </t>
+
+          <t>
           draft-muks-dnsop-dns-thundering-herd-00
           <vspace/>
-          * Initial draft.
+          Initial draft.
           </t>
 
         </list>
