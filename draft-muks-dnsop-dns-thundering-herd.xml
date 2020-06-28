@@ -283,7 +283,8 @@
         cached answer, DNS resolutions have to be performed to answer
         these queries. De-duplication of these multiple resolutions into
         a single DNS resolution by the resolver is RECOMMENDED where
-        possible.</t>
+        possible. Such de-duplication is also relevant to avoid birthday
+        attacks as described in <xref target="RFC5452" />.</t>
 
         <t>If such de-duplication is not performed, the client queries
         will effectively be forwarded 1:1 by the resolver to upstream
@@ -339,7 +340,8 @@
       which resulted in traffic spikes that caused performance issues
       and lookup failures. The authors acknowledge the contribution of
       Ramesh Damodaran who participated in analysis of these
-      patterns.</t>
+      patterns. The authors also thank Robert Edmonds for his review of
+      the draft.</t>
     </section>
 
   </middle>
@@ -354,6 +356,7 @@
     </references>
 
     <references title="Informative references">
+      <?rfc include="reference.RFC.5452.xml"?>
       <reference anchor="RRL" target="https://ftp.isc.org/isc/pubs/tn/isc-tn-2012-1.txt">
 	<front>
 	  <title>DNS Response Rate Limiting (DNS RRL)</title>
