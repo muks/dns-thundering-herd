@@ -30,7 +30,7 @@
 <!-- end of list of popular I-D processing instructions -->
 <?rfc comments="no" ?>
 <?rfc inline="yes" ?>
-<rfc category="exp" docName="draft-muks-dnsop-dns-thundering-herd-00" ipr="trust200902">
+<rfc category="exp" docName="draft-muks-dnsop-dns-thundering-herd-01" ipr="trust200902">
 
   <front>
 
