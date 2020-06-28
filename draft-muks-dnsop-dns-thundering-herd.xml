@@ -335,7 +335,8 @@
 	of these spikes was observed to be equal to the TTL of the
 	answer RRset. Prefetching does not usually happen as there's
 	often no lone client that queries a few seconds before the
-	answer expires.</t>
+	answer expires. Use of prefetching also cannot address the spike
+	in queries from a resolver's clients to the resolver.</t>
       </section>
 
     </section>
