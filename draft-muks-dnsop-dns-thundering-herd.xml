@@ -82,7 +82,7 @@
 
   <middle>
 
-    <section title="Problem Description">
+    <section title="Problem description">
       <t>Typically, DNS caching resolvers prepare answers for multiple
       clients from a single cached RRset <xref target="RFC1034"
       />. Depending on when in time the clients make their queries,
@@ -266,7 +266,7 @@
 
     </section>
 
-    <section title="Requirements Notation">
+    <section title="Requirements notation">
       <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL
       NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED",
       "MAY", and "OPTIONAL" in this document are to be interpreted as
@@ -325,7 +325,7 @@
 
     </section>
 
-    <section title="Security Considerations">
+    <section title="Security considerations">
       <t>There are no security considerations.</t>
     </section>
 
